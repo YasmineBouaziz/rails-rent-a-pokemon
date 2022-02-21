@@ -120,7 +120,7 @@ GEM
     minitest (5.15.0)
     msgpack (1.4.5)
     nio4r (2.5.8)
-    nokogiri (1.13.1-arm64-darwin)
+    nokogiri (1.13.1-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.1-x86_64-linux)
       racc (~> 1.4)
@@ -242,6 +242,7 @@ PLATFORMS
   x86_64-linux
   x86_64-darwin-20
   arm64-darwin-20
+  x86_64-darwin-20
 
 DEPENDENCIES
   autoprefixer-rails (= 10.2.5)
