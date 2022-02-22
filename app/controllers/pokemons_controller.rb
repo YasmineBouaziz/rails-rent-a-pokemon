@@ -7,7 +7,7 @@ class PokemonsController < ApplicationController
     @pokemon = Pokemon.find(params[:id])
     @booking = @pokemon.bookings.all
   end
-  
+
   def new
     @pokemon = Pokemon.new
   end
