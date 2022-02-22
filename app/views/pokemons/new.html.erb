@@ -1,8 +1,8 @@
-<h1>Add your new pokemon details here</h1>
 
-<div class="container">
+<h2>Add your new pokemon details here</h2>
+<div class="container form-container">
   <div class="row">
-    <div class="add-pokemon-card col">
+    <div class="form-card col-md-8 col-lg-6 col-xl-6">
       <%= simple_form_for(@pokemon) do |f| %>
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -15,10 +15,12 @@
         </div>
 
         <div class="form-actions">
-          <button type="button" class="btn btn-dark"><%= f.button :submit %></button>
+          <%= f.button :submit, class: "button" %>
         </div>
       <% end %>
     </div>
-    <button type="button" class="btn btn-light"><%= link_to 'Back', pokemons_path %></button>
+  </div>
+  <div class="row links">
+    <%= link_to 'Back', pokemons_path, class: "button" %>
   </div>
 </div>
