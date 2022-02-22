@@ -8,7 +8,7 @@
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
         <div class="form-inputs">
-          <%= f.input :name, input_html: { placeholder: 'Charizard' } %>
+          <%= f.input :name, label: "Pokemon name", input_html: { placeholder: 'Charizard' } %>
           <%= f.input :description, input_html: { placeholder: 'Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally.' } %>
           <%= f.input :photo_url, input_html: { placeholder: 'https://static.pokemonpets.com/images/monsters-images-300-300/6-Charizard.webp' } %>
           <%= f.input :price, input_html: { placeholder: '£55' } %>
