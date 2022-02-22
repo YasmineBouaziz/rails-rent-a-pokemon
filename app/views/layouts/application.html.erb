@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsRentAPokemon</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<head>
+  <title>RailsRentAPokemon</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-  <body>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+</head>
+
+<body>
+  <div class="container-fluid">
     <%= render 'layouts/navbar' %>
     <%= yield %>
-
     <%= render 'layouts/footer' %>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+  </div>
+</body>
 
-  </body>
 </html>

@@ -1,1 +1,21 @@
 // Specific CSS for your home-page
+.headline{
+  color:white;
+  font-weight: strong;
+  font-size: 60px;
+  text-shadow: 6px 7px 1px #0000005b;
+}
+
+button.CTA{
+top: 675px;
+font-size: 40px;
+text-shadow: 2px -1px 0px #0000005b;
+}
+
+.hero img{
+  border-radius: 10px;
+}
+
+body{
+  background-color: black
+}
