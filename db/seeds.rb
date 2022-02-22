@@ -18,7 +18,7 @@ User.destroy_all
   user.save!
 
   rand(1..10).times do
-    pokemon = Pokemon.new(name: Faker::Games::Pokemon.name, description: Faker::TvShows::BojackHorseman.quote, photo_url: "https://picsum.photos/200", user: user)
+    pokemon = Pokemon.new(name: Faker::Games::Pokemon.name, description: Faker::TvShows::BojackHorseman.quote, photo_url: "https://picsum.photos/200", price: rand(50..1000), user: user)
     pokemon.save!
       rand(0..3).times do
         booking = Booking.new(user: user, pokemon: pokemon)
