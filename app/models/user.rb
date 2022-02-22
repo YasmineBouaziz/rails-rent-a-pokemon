@@ -6,5 +6,6 @@ class User < ApplicationRecord
   validates :name, presence: true
   # validates :email, format: { with: /\A.*@.*\.com\z/ }
   has_many :pokemons
+  has_many :bookings
   has_many :reviews, through: :bookings
 end
