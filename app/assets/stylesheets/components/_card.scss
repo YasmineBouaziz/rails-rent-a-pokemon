@@ -1,0 +1,37 @@
+.card {
+  background-color: transparent;
+  border-color: transparent;
+  padding: 20px;
+}
+
+.cards .card a img{
+  width: 100%;
+  border-radius:20px;
+  padding-bottom: 10px;
+}
+
+.card .card_info > a{
+  display:flex;
+  justify-content: space-between;
+  align-items: baseline;
+  text-decoration: none;
+}
+
+.card a{
+  color: black
+}
+
+.card .card_left h2{
+  font-size: 22px;
+  font-style: strong;
+}
+
+.card .card_left h3{
+  font-size: 19px;
+  opacity: 0.5
+}
+
+.card .card_right h2{
+  font-size: 22px;
+  text-decoration: underline;
+}
