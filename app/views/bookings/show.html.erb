@@ -1,0 +1,24 @@
+<div class="row">
+          <div class="col-md-6">
+              <div class="text-left">
+              <h4><strong>booking details</strong></h4>
+              <br>
+                <table>
+                 <tbody>
+                    <tr>
+                      <td> <h4><i class="fa fa-heart" aria-hidden="true"></i> </h4></td>
+                      <td><h4> &nbsp; Your host is <strong> <%= @booking.pokemon.user.name %> </strong></h4></td>
+                    </tr>
+                    <tr>
+                    <td><h4> <i class="fa fa-bed" aria-hidden="true"></i></h4></td>
+                      <td><h4> &nbsp; You asked to join a warm bed from : <br>  &nbsp;   <%= @booking.start_date %> to <%= @booking.end_date %> </h4></td>
+                    </tr>
+                    <tr>
+                      <td><h4> <i class="fa-solid fa-paw-claws"></i></h4></td>
+                      <td><h4> &nbsp; The total price for your booking is <%= @booking.price %> €</h4></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          </div>
+    </div>

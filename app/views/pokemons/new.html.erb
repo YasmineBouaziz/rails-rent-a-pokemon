@@ -1,0 +1,26 @@
+
+<h2>Add your new pokemon details here</h2>
+<div class="container form-container">
+  <div class="row">
+    <div class="form-card col-md-8 col-lg-6 col-xl-6">
+      <%= simple_form_for(@pokemon) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs">
+          <%= f.input :name, label: "Pokemon name", placeholder: 'Charizard' %>
+          <%= f.input :description, label: "Pokemon description",placeholder: 'Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally.' %>
+          <%= f.input :photo_url, label: "Pokemon photo URL",placeholder: 'https://static.pokemonpets.com/images/monsters-images-300-300/6-Charizard.webp' %>
+          <%= f.input :price, label: "Pokemon price", placeholder: '£55' %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, class: "button" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row links">
+    <%= link_to 'Back', pokemons_path, class: "button" %>
+  </div>
+</div>
