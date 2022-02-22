@@ -1,0 +1,31 @@
+.form-h2 {
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-card {
+  background-color: white;
+  border-radius: 5px;
+  margin: auto auto 20px auto;
+  padding: 10px;
+}
+
+.form-inputs {
+  border-radius: 5px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.links {
+  margin: auto;
+}
