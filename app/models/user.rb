@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :name, presence: true
+  # validates :email, format: { with: /\A.*@.*\.com\z/ }
   has_many :pokemons
   has_many :reviews, through: :bookings
 end
