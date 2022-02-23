@@ -7,12 +7,6 @@ class BookingsController < ApplicationController
     set_booking
   end
 
-  private
-
-  def set_booking
-    @booking = Booking.find(params[:id])
-  end
-
   def create
     @booking = Booking.new(booking_params)
     @pokemon = Pokemon.find(params[:pokemon_id])
@@ -29,12 +23,13 @@ class BookingsController < ApplicationController
   #   @booking.destroy
   #   redirect_to pokemon_path(@booking.pokemon)
   # end
-
   private
+
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
   end
-
-
 end
