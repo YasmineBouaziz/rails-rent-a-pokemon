@@ -1,5 +1,8 @@
 // Import page-specific CSS files here.
 @import "../components/card";
+@import "../components/alert";
+@import "../components/avatar";
+@import "../components/navbar";
 
 .cards {
   display: grid;

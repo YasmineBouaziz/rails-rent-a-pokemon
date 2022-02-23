@@ -1,9 +1,7 @@
-.card {
-  background-color: transparent;
-  border-color: transparent;
-  padding: 20px;
-  box-shadow: 1px 4px 8px 0px rgba(92, 92, 92, 0.36);
-}
+$font-m: 1vw;
+$font-l: 2vw;
+$font-xl: 3vw;
+$font-xxl: 4vw;
 
 .cards .card a img{
   max-width: 100%;
@@ -12,6 +10,15 @@
   border-radius:20px;
   padding-bottom: 10px;
 }
+
+.card {
+  background-color: transparent;
+  border-color: transparent;
+  padding: 20px;
+  box-shadow: 1px 4px 8px 0px rgba(92, 92, 92, 0.36);
+}
+
+
 
 .card .card-info > a{
   display:flex;
@@ -25,16 +32,67 @@
 }
 
 .card .card-left h2{
-  font-size: 1.1vw;
+  font-size: $font-m;
   font-style: strong;
 }
 
 .card .card-left h3{
-  font-size: 1vw;
+  font-size: $font-m;
   opacity: 0.5
 }
 
 .card .card-right h2{
-  font-size: 1vw;
+  font-size: $font-m;
   text-decoration: underline;
+}
+
+@media(max-width: 1200px) {
+    .card .card-left h2{
+      font-size: $font-l;
+      font-style: strong;
+    }
+
+    .card .card-left h3{
+      font-size: $font-l;
+      opacity: 0.5
+    }
+
+    .card .card-right h2{
+      font-size: $font-l;
+      text-decoration: underline;
+  }
+}
+
+@media(max-width: 920px) {
+  .card .card-left h2{
+    font-size: $font-xl;
+    font-style: strong;
+  }
+
+  .card .card-left h3{
+    font-size: $font-xl;
+    opacity: 0.5
+  }
+
+  .card .card-right h2{
+    font-size: $font-xl;
+    text-decoration: underline;
+}
+}
+
+@media(max-width: 600px) {
+  .card .card-left h2{
+    font-size: $font-xxl;
+    font-style: strong;
+  }
+
+  .card .card-left h3{
+    font-size: $font-xxl;
+    opacity: 0.5
+  }
+
+  .card .card-right h2{
+    font-size: $font-xxl;
+    text-decoration: underline;
+}
 }
