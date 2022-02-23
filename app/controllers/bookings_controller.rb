@@ -11,8 +11,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @pokemon = Pokemon.find(params[:pokemon_id])
     @booking.pokemon = @pokemon
+    @booking.user = current_user
     if @booking.save
-      redirect_to @pokemon, notice: 'Booking was successfully created.' # Not sure about the path here
+      redirect_to booking_path(@booking) # Not sure about the path here
     else
       render 'pokemons/show'
     end
