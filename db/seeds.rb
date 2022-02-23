@@ -28,7 +28,7 @@ def fetcher(name)
 end
 
 5.times do
-  user = User.new(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Name.name)
+  user = User.new(name: Faker::Name.name, email: Faker::Internet.email, password: "bobbob")
   user.save!
 
   rand(1..30).times do
