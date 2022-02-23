@@ -5,11 +5,12 @@ class BookingsController < ApplicationController
 
   def show
     set_booking
-    @pokemon = @booking.pokemon
   end
 
+  private
+
   def set_booking
-    @bookmark = Bookmark.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
 
   def create

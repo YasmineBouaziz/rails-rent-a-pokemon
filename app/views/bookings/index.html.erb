@@ -1,0 +1,23 @@
+<div class="container-fluid bg-light p-0">
+<div class="text-center padded">
+  <h2 class="m-0">All my Pokémons</h2>
+</div>
+<div class="text-center">
+  <h3>MY FUTURE POKÉMONS</h3>
+</div>
+<div class="wrapper-dashboard">
+  <div class="cards">
+    <% @bookings.each do |booking| %>
+        <div class="card">
+        <%= link_to booking do %>
+      <% booking.start_date %>
+        <% booking.end_date %>
+          <div class='product-body'>
+            <h2><%= booking.pokemon.name %></h2>
+            <p>Total price: £<strong><%= booking.pokemon.price %> </strong></p>
+          </div>
+          <% end %>
+          </div>
+        <% end %>
+      </div>
+</div>
