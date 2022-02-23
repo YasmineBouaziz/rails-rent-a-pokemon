@@ -2,15 +2,18 @@
   background-color: transparent;
   border-color: transparent;
   padding: 20px;
+  box-shadow: 1px 4px 8px 0px rgba(92, 92, 92, 0.36);
 }
 
 .cards .card a img{
-  width: 100%;
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
   border-radius:20px;
   padding-bottom: 10px;
 }
 
-.card .card_info > a{
+.card .card-info > a{
   display:flex;
   justify-content: space-between;
   align-items: baseline;
@@ -21,17 +24,17 @@
   color: black
 }
 
-.card .card_left h2{
+.card .card-left h2{
   font-size: 22px;
   font-style: strong;
 }
 
-.card .card_left h3{
+.card .card-left h3{
   font-size: 19px;
   opacity: 0.5
 }
 
-.card .card_right h2{
+.card .card-right h2{
   font-size: 22px;
   text-decoration: underline;
 }
