@@ -1,5 +1,5 @@
 <div class="container-fluid bg-light p-0">
-<div class="text-center padded">
+<div class="text-center p-4">
   <h2 class="m-0">All my Pokémons</h2>
 </div>
 <div class="text-center">
@@ -13,7 +13,7 @@
       <% booking.start_date %>
         <% booking.end_date %>
           <div class='product-body'>
-            <h2><%= booking.pokemon.name %></h2>
+            <h2 class="text-decoration-none"><%= booking.pokemon.name.titleize %></h2>
             <p>Total price: £<strong><%= booking.pokemon.price %> </strong></p>
           </div>
           <% end %>
