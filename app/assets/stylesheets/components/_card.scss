@@ -6,8 +6,8 @@
 }
 
 .cards .card a img{
-  width: 320px;
-  height: 320px;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: cover;
   border-radius:20px;
   padding-bottom: 10px;
@@ -25,16 +25,16 @@
 }
 
 .card .card-left h2{
-  font-size: 22px;
+  font-size: 1.1vw;
   font-style: strong;
 }
 
 .card .card-left h3{
-  font-size: 19px;
+  font-size: 1vw;
   opacity: 0.5
 }
 
 .card .card-right h2{
-  font-size: 22px;
+  font-size: 1vw;
   text-decoration: underline;
 }
