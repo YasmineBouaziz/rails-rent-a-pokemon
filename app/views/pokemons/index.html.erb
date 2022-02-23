@@ -1,24 +1,22 @@
 <div class="container-fluid bg-light p-0 ">
   <div class="cards">
-    <% @pokemons.each do |pokemon| %>
+    <% @pokemons.shuffle.each do |pokemon| %>
 
     <div class="card">
     <%= link_to pokemon do %>
       <img src="<%=pokemon.photo_url%>">
 
-      <div class="card_info">
-        <div class="card_left">
-          <h2><%=pokemon.name %></h2>
+      <div class="card-info">
+        <div class="card-left">
+          <h2><%=pokemon.name.titleize %></h2>
           <h3><%=pokemon.user.name %></h3>
         </div>
-        <div class="card_right">
+        <div class="card-right">
           <h2>£<%=pokemon.price %></h2>
         </div>
       <% end %>
       </div>
     </div>
-
-
 
     <% end %>
   </div>
