@@ -1,9 +1,9 @@
-.navbar-lewagon {
+.navbar-pokemon {
   justify-content: space-between;
   background: white;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-pokemon .navbar-collapse {
   flex-grow: 0;
 }
 
@@ -13,9 +13,10 @@
 
 .nav-link {
   color: white;
+  margin-left: 2vw;
 }
 
-.nav-link :hover {
-  color:white;
+.nav-link:hover {
+  color: #CF374C;
   opacity: 0.7
 }

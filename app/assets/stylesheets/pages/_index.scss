@@ -1,9 +1,30 @@
 // Import page-specific CSS files here.
 @import "../components/card";
+@import "../components/alert";
+@import "../components/avatar";
+@import "../components/navbar";
 
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 40px 20px;
   padding: 30px;
+}
+
+@media(max-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media(max-width: 920px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
