@@ -1,3 +1,5 @@
+require_relative '../../db/pokemon-list'
+
 class PokemonsController < ApplicationController
   def index
     @pokemons = Pokemon.all
@@ -10,6 +12,7 @@ class PokemonsController < ApplicationController
 
   def new
     @pokemon = Pokemon.new
+    @pokemon_list = PokemonList::LIST
   end
 
   def create
