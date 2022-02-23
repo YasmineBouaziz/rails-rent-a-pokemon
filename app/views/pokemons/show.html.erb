@@ -25,12 +25,12 @@
             </button>
           </div>
           <div class="container">
-<div class="card-category p-2">
-  <div class="card p-4" style="background-color: #f5f5f5;">
-  <div class="poke-title">
-    <h1><%= @pokemon.name %></h1>
-  </div>
-  </div>
+  <div class="card-category p-2">
+    <div class="card p-4" style="background-color: #f5f5f5;">
+      <div class="poke-title">
+        <h1><%= @pokemon.name %></h1>
+      </div>
+    </div>
   </div>
 
   <div class="card-category p-2">
@@ -45,3 +45,20 @@
     </div>
   </div>
     </div>
+
+
+<%# Parts added by Natalija %>
+<h2 class="form-h2">Book this pokemon</h2>
+<div class="container form-container">
+  <div class="row">
+    <div class="form-card col-md-8 col-lg-6 col-xl-6">
+      <%= simple_form_for [@pokemon, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <div class="form-actions">
+          <%= f.submit 'Make a booking', class: "button" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
