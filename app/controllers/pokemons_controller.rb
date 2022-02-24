@@ -8,6 +8,7 @@ class PokemonsController < ApplicationController
   def show
     @pokemon = Pokemon.find(params[:id])
     @booking = Booking.new
+    @review = Review.new
   end
 
   def new
