@@ -2,18 +2,20 @@
 h1.headline{
   color:white;
   font-weight: strong;
-  font-size: 60px;
+  font-size: 4vw;
   text-shadow: 6px 7px 1px #0000005b;
 }
 
 a.CTA{
 top: 675px;
-font-size: 40px;
+font-size: 2vw;
 text-shadow: 2px -1px 0px #0000005b;
 }
 
 .hero img{
   border-radius: 10px;
+  min-width: 120vw;
+  min-height: 100vh;
 }
 
 body{
