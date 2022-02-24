@@ -1,8 +1,8 @@
-<div class="container-fluid bg-light p-0 ">
+<div class="container-fluid p-0 ">
   <div class="cards">
     <% @pokemons.each do |pokemon| %>
 
-    <div class="card">
+    <div class="card bg-light">
     <%= link_to pokemon do %>
       <img src="<%=pokemon.photo_url%>">
 
