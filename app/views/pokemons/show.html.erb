@@ -1,54 +1,58 @@
 <div class="container pt-4">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-8">
-          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="<%= @pokemon.photo_url %>" class="w-100 rounded" alt="poke">
-              </div>
-              <div class="carousel-item">
-                <img src="<%= @pokemon.photo_url %>" class="w-100 rounded" alt="poke">
-              </div>
-              <div class="carousel-item">
-                <img src="<%= @pokemon.photo_url %>" class="w-100 rounded" alt="poke">
-              </div>
+  <div class="row justify-content-center">
+    <div class="col-8 col-lg-6">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="<%= @pokemon.photo_url %>" class="w-100 rounded" alt="poke">
+          </div>
+          <div class="carousel-item">
+            <img src="<%= @pokemon.photo_url %>" class="w-100 rounded" alt="poke">
+          </div>
+          <div class="carousel-item">
+            <img src="<%= @pokemon.photo_url %>" class="w-100 rounded" alt="poke">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container form-container">
+  <div class="row">
+    <div class="col-lg-6 mb-4">
+      <div class="card p-4 form-card" style="background-color: #f5f5f5;">
+        <h1><%= @pokemon.name.capitalize %> </h1>
+      </div>
+      <div class="card p-4 form-card" style="background-color: #f5f5f5;">
+        <h2>A bit more about this Pokemon ...</h2>
+        <p><%= @pokemon.description %> </p>
+      </div>
+    </div>
+    <div class="col-lg-6 mb-4">
+      <div class="">
+        <div class="container form-container">
+          <div class="row">
+            <div class="form-card col-md-10 col-lg-12">
+              <h2>£<%=@pokemon.price.to_i %> / day </h2><%= simple_form_for [@pokemon, @booking] do |f| %> <h2><%= f.input :start_date %><%= f.input :end_date %> <div class="form-actions"><%= f.submit 'Reserve Pokémon', class: "button" %> </div>
+                <h2>£<%=@pokemon.price.to_i %> x <%= @booking.end_date.to_i - @booking.start_date.to_i %> </h2>
+                <h2>
+                  <strong>Total</strong>
+                </h2>
+                <div class="border-top ">
+                  <h2>£<%= @pokemon.price.to_i %> </h2>
+                </div><% end %>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-
-          <div class="card p-4" style="background-color: #f5f5f5; margin-top: 20px;">
-            <h1><%= @pokemon.name %></h1>
-          </div>
-          <div class="card p-4" style="background-color: #f5f5f5; margin-top: 20px;">
-            <h2>A bit more about this Pokemon ...</h2>
-            <p><%= @pokemon.description %></p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<%# Parts added by Natalija %>
-<h2 class="form-h2">Book this pokemon</h2>
-<div class="container form-container">
-  <div class="row">
-    <div class="form-card col-md-8 col-lg-6 col-xl-6">
-      <%= simple_form_for [@pokemon, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <div class="form-actions">
-          <%= f.submit 'Make a booking', class: "button" %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
-<%# Parts added by Natalija %>
