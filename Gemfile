@@ -71,3 +71,4 @@ gem 'faker'
 
 # Event Listening
 gem 'stimulus-rails'
+gem 'bootstrap'
