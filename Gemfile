@@ -71,3 +71,6 @@ gem 'faker'
 
 # Event Listening
 gem 'stimulus-rails'
+
+#Cloudinary
+gem 'dotenv-rails', groups: [:development, :test]
