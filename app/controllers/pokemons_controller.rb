@@ -16,6 +16,7 @@ class PokemonsController < ApplicationController
   end
 
   def create
+    # To writ if statement to fetch a picture from API, if no ohotos given by the user
     @pokemon = Pokemon.new(pokemon_params)
     @pokemon.user_id = current_user.id
 
@@ -29,6 +30,6 @@ class PokemonsController < ApplicationController
   private
 
   def pokemon_params
-    params.require(:pokemon).permit(:name, :description, :photo_url, :price)
+    params.require(:pokemon).permit(:name, :description, :price, photos: [])
   end
 end
