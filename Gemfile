@@ -66,8 +66,13 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # For user authentication
 gem 'devise'
 
-#For seed
+# For seed
 gem 'faker'
 
 # Event Listening
 gem 'stimulus-rails'
+
+# Search Filter
+gem 'elasticsearch', "< 7.14" # to use a supported version of the Elasticsearch Ruby client
+gem 'searchkick', '~> 4.0'
+gem 'pg_search', '~> 2.3.0'
