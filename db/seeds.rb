@@ -42,7 +42,7 @@ end
         booking.start_date = Faker::Date.between(from: '2022-02-22', to: '2022-10-22')
         booking.end_date = Faker::Date.between(from: '2022-10-23', to: '2023-10-22')
         booking.save!
-        review = Review.new(content: Faker::TvShows::BojackHorseman.quote, rating: rand(1..5), booking: booking)
+        review = Review.new(content: Faker::TvShows::BojackHorseman.quote, rating: rand(1..5), pokemon: pokemon)
         review.save!
       end
   end
