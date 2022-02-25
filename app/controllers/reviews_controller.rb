@@ -3,19 +3,15 @@ class ReviewsController < ApplicationController
     @reviews = Review.where(pokemon_id: @pokemon)
   end
 
-  def new
-    @pokemon = Pokemon.find(params[:pokemon_id])
-    @review = Review.new
-  end
 
   def create
     @review = Review.new(review_params)
     @review.pokemon = Pokemon.find(params[:pokemon_id])
-     @review.save
+    if @review.save
       redirect_to pokemon_path(@review.pokemon)
-    # else
-      # render 'pokemon/show'
-    # end
+    else
+      render 'pokemon/show'
+    end
   end
 
   private
