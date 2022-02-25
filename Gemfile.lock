@@ -173,12 +173,9 @@ GEM
     multipart-post (2.1.1)
     netrc (0.11.0)
     nio4r (2.5.8)
-<<<<<<< HEAD
-    nokogiri (1.13.3-x86_64-darwin)
-=======
     nokogiri (1.13.3-arm64-darwin)
->>>>>>> e853ee64267b53843b6f8bc60becb6e5dda6f988
       racc (~> 1.4)
+    nokogiri (1.13.3-x86_64-darwin)
     nokogiri (1.13.3-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -186,10 +183,6 @@ GEM
     pg_search (2.3.6)
       activerecord (>= 5.2)
       activesupport (>= 5.2)
-<<<<<<< HEAD
-=======
-    popper_js (2.9.3)
->>>>>>> e853ee64267b53843b6f8bc60becb6e5dda6f988
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -317,11 +310,8 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
-
-  x86_64-darwin-20
-
   arm64-darwin-20
-
+  x86_64-darwin-20
   x86_64-linux
 
 DEPENDENCIES
