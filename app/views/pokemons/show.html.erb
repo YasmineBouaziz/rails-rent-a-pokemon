@@ -60,7 +60,7 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <ul><% @pokemon.reviews.each do |review| %> <li><%= review.rating %> - <%= review.content %> </li><% end %> </ul>
+                      <ul><% @pokemon.reviews.each do |review| %> <li><%= @pokemon.user[:name] %> - <%= review.rating %> - <%= review.content %> </li><% end %> </ul>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
