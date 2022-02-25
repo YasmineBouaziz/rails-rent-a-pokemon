@@ -59,7 +59,7 @@ class PokemonsController < ApplicationController
   end
 
   def get_pokemon_photo(name)
-    url = "https://pokeapi.co/api/v2/pokemon/#{name}"
+    url = "https://pokeapi.co/api/v2/pokemon/#{name.downcase}"
     response = RestClient.get(url)
     pokemon_image = JSON.parse(response)["sprites"]["other"]["official-artwork"]["front_default"]
     if pokemon_image.present?
