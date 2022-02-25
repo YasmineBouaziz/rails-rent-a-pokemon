@@ -11,11 +11,11 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.pokemon = Pokemon.find(params[:pokemon_id])
-    if @review.save!
+     @review.save
       redirect_to pokemon_path(@review.pokemon)
-    else
-      render :new
-    end
+    # else
+      # render 'pokemon/show'
+    # end
   end
 
   private

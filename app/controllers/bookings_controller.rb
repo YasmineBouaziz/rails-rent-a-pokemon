@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @betweener = (@booking["end_date"] - @booking["start_date"]).to_i
     @pokemon = Pokemon.find(params[:pokemon_id])
     @booking.pokemon = @pokemon
     @booking.user = current_user

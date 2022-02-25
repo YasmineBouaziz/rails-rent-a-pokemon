@@ -9,6 +9,19 @@ class PokemonsController < ApplicationController
     else
       @pokemons = Pokemon.all.reverse
     end
+
+
+    # respond_to do |format|
+    #   if @query.present? && @query["query"] != ""
+    #     format.html { redirect_to pokemons_path }
+    #   else
+    #     format.html { render "../views/pokemons/pokemon" }
+    #   end
+    # end
+
+
+
+
   end
 
   def show
@@ -32,7 +45,6 @@ class PokemonsController < ApplicationController
       @pokemon = Pokemon.new(pokemon_params)
     end
     @pokemon.user_id = current_user.id
-
     if @pokemon.save
       redirect_to @pokemon, notice: "#{@pokemon.name} was successfully created."
     else
