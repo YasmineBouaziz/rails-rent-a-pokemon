@@ -6,13 +6,13 @@ class Pokemon < ApplicationRecord
   has_many :reviews, through: :bookings
 
   include PgSearch::Model
-  pg_search_scope :yo,
+  pg_search_scope :search_pokemon,
     against: :name,
     associated_against: {
       user: [:name]
     },
     using: {
-      trigram: { prefix: true }
+      tsearch: { prefix: true }
     }
   # PgSearch.multisearch_options = {
   #   using: [:tsearch, :trigram]

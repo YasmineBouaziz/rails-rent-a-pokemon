@@ -2,7 +2,13 @@ require_relative '../../db/pokemon-list'
 
 class PokemonsController < ApplicationController
   def index
-    @pokemons = Pokemon.all
+    @query = params["query"].nil? ? "" : params["query"]
+
+    if @query.present? && @query["query"] != ""
+      @pokemons = Pokemon.search_pokemon(@query["query"].downcase).sort_by{ |pokemon| pokemon.name }
+    else
+      @pokemons = Pokemon.all.reverse
+    end
   end
 
   def show

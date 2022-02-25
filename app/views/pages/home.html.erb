@@ -1,7 +1,8 @@
 <div class="col-12 hero d-flex justify-content-center align-items-center">
+<%= video_tag "banner2.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "col-12 home_video" %>
   <div data-controller="master" class="hero center position-absolute text-center">
-    <h1 class="headline">Looking for a tag-along?</h1>
+    <h1 class="headline py-3">Looking for a tag-along?</h1>
      <%= link_to "Gotta Rent ’Em All", pokemons_path, class:"CTA btn btn-outline-light" %>
   </div>
-  <%= image_tag("banner2.jpg", class: "banner col-12") %>
+  <%# <%= image_tag("banner2.jpg", class: "banner col-12") %>
 </div>

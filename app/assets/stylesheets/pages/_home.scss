@@ -7,18 +7,48 @@ h1.headline{
 }
 
 a.CTA{
-top: 675px;
 font-size: 2vw;
 text-shadow: 2px -1px 0px #0000005b;
 }
 
-.hero img{
-  border-radius: 10px;
-  // min-width: 120vw;
-  // min-height: 100vh;
+.hero{
+  top: 380px
+}
+
+.home_video{
+  object-fit: cover;;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
 }
 
 body{
   background-color: black;
 
+}
+
+@media(max-width: 1200px) {
+  h1.headline{
+    font-size: 7vw;
+  }
+
+  a.CTA{
+  font-size: 4vw;
+  }
+}
+
+@media(max-width: 920px) {
+  h1.headline{
+    font-size: 6vw;
+  }
+
+  a.CTA{
+  font-size: 5vw;
+  }
+}
+
+@media(max-width: 600px) {
+  h1.headline{
+    font-size: 10vw;
+  }
 }
