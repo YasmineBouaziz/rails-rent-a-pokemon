@@ -89,9 +89,14 @@
                 <h5 class="modal-title" id="exampleModalLabel">New Review</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal-body"><%= simple_form_for [@pokemon, @review], html: { class: 'mt-1' } do |form| %><%= form.input :content %><%= form.input :rating %> </div>
+              <div class="modal-body"><%= simple_form_for [@pokemon, @review], html: { class: 'mt-1' } do |form| %>
+                <%= form.input :content %>
+                <%= form.input :rating %>
+                <%= form.submit 'Send review', class: 'button' %>
+                <% end %>
+                </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><%= form.submit 'Send review', class: 'button' %><% end %>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
