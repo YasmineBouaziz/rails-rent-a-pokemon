@@ -1,32 +1,35 @@
-<div class="row justify-content-center">
-  <div class="col-12 col-md-8">
-    <div id="carouselExampleControls"
-          class="carousel slide"
-          data-bs-ride="carousel" >
-      <div class="carousel-inner" style="height: 600px !important; margin: 30px;">
-      <% if @pokemon.photos.present? %>
-        <% @pokemon.photos.each_with_index do |photo, index| %>
-          <div class="carousel-item <%="active" if index.zero? %>">
-          <%= cl_image_tag(photo.key, crop: :fit, class: "d-block w-100", style: "border-radius: 5px;")%>
+<div class="container pt-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+      <div id="carouselExampleControls"
+            class="carousel slide"
+            data-bs-ride="carousel" >
+        <div class="carousel-inner" style="height: 600px !important; margin: 30px;">
+        <% if @pokemon.photos.present? %>
+          <% @pokemon.photos.each_with_index do |photo, index| %>
+            <div class="carousel-item active <%="active" if index.zero? %>">
+            <%= cl_image_tag(photo.key, crop: :fit, class: "d-block w-100", style: "border-radius: 5px;")%>
+            </div>
+          <% end %>
+        <% else %>
+            <div class="carousel-item active">
+            <img src="<%= @pokemon.photo_url %>" class="d-block w-100" style="border-radius: 5px;">
           </div>
         <% end %>
-      <% else %>
-          <div class="carousel-item active">
-          <img src="<%= @pokemon.photo_url %>" class="d-block w-100" style="border-radius: 5px;">
         </div>
-      <% end %>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
   </div>
 </div>
+
 
 <div class="container form-container">
   <div class="row">
@@ -65,7 +68,7 @@
                   </div>
                 </div>
               </div>
-              <h2>£<%=@pokemon.price.to_i %> / day </h2><%= simple_form_for [@pokemon, @booking] do |f| %> <h2><%= f.input :start_date %><%= f.input :end_date %> <div class="form-actions"><%= f.submit 'Reserve Pokémon', class: "button" %> </div>
+              <h2>£<%=@pokemon.price.to_i %> / day </h2><%= simple_form_for [@pokemon, @booking] do |f| %> <h2><%= f.input :start_date %><%= f.input :end_date %> <div class="form-actions"><%= f.submit 'I Choose You!', class: "button" %> </div>
                 <span>£<%=@pokemon.price.to_i %> x <%= @booking.end_date.to_i - @booking.start_date.to_i %> </span>
                 <h2>
                   <strong>Total</strong>
