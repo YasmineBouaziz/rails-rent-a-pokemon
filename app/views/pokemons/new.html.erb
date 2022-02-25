@@ -9,7 +9,8 @@
         <div class="form-inputs">
           <%= f.input :name, label: "Pokemon name", as: :select, collection: @pokemon_list, prompt: 'Select Pokemon'%>
           <%= f.input :description, label: "Pokemon description",placeholder: 'Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally.' %>
-          <%= f.input :photo_url, label: "Pokemon photo URL",placeholder: 'https://static.pokemonpets.com/images/monsters-images-300-300/6-Charizard.webp' %>
+          <%# <%= f.input :photo_url, label: "Pokemon photo URL",placeholder: 'https://static.pokemonpets.com/images/monsters-images-300-300/6-Charizard.webp' %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           <%= f.input :price, label: "Pokemon price", placeholder: '£55' %>
         </div>
 

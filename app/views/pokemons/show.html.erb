@@ -1,54 +1,99 @@
-<div class="container pt-4">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-8">
-          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="<%= @pokemon.photo_url %>" class="w-100 rounded" alt="poke">
+<div class="row justify-content-center">
+  <div class="col-12 col-md-8">
+    <div id="carouselExampleControls"
+          class="carousel slide"
+          data-bs-ride="carousel" >
+      <div class="carousel-inner" style="height: 600px !important; margin: 30px;">
+      <% if @pokemon.photos.present? %>
+        <% @pokemon.photos.each_with_index do |photo, index| %>
+          <div class="carousel-item <%="active" if index.zero? %>">
+          <%= cl_image_tag(photo.key, crop: :fit, class: "d-block w-100", style: "border-radius: 5px;")%>
+          </div>
+        <% end %>
+      <% else %>
+          <div class="carousel-item active">
+          <img src="<%= @pokemon.photo_url %>" class="d-block w-100" style="border-radius: 5px;">
+        </div>
+      <% end %>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container form-container">
+  <div class="row">
+    <div class="col-lg-6 mb-4">
+      <div class="card p-4 form-card" style="background-color: #f5f5f5;">
+        <h1><%= @pokemon.name.titleize %> </h1>
+      </div>
+      <div class="card p-4 form-card" style="background-color: #f5f5f5;">
+        <h2>A bit more about this Pokemon ...</h2>
+        <p><%= @pokemon.description %> </p>
+      </div>
+    </div>
+    <div class="col-lg-6 mb-4">
+      <div class="">
+        <div class="container form-container">
+          <div class="row">
+            <div class="form-card col-md-10 col-lg-12"><% sum = 0 %><% @pokemon.reviews.each do |review| %><% sum += review[:rating] %><% end %> <div class="d-flex">
+                <i class="fa fa-star m-1" style="color: red;"></i>
+                <span><%= ( average = sum.to_f / @pokemon.reviews.length).round(1) %> </span> - <span data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: underline; cursor: pointer; "><%= length = @pokemon.reviews.length  %> reviews </span>
               </div>
-              <div class="carousel-item">
-                <img src="<%= @pokemon.photo_url %>" class="w-100 rounded" alt="poke">
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <i class="fa fa-star m-1" style="color: red;"></i>
+                      <h5 class="modal-title" id="exampleModalLabel"><%= average.round(1) %> - <%= length %> </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <ul><% @pokemon.reviews.each do |review| %> <li><%= review.rating %> - <%= review.content %> </li><% end %> </ul>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="carousel-item">
-                <img src="<%= @pokemon.photo_url %>" class="w-100 rounded" alt="poke">
+              <h2>£<%=@pokemon.price.to_i %> / day </h2><%= simple_form_for [@pokemon, @booking] do |f| %> <h2><%= f.input :start_date %><%= f.input :end_date %> <div class="form-actions"><%= f.submit 'Reserve Pokémon', class: "button" %> </div>
+                <span>£<%=@pokemon.price.to_i %> x <%= @booking.end_date.to_i - @booking.start_date.to_i %> </span>
+                <h2>
+                  <strong>Total</strong>
+                </h2>
+                <div class="border-top ">
+                  <h2>£<%= @pokemon.price.to_i %> </h2>
+                </div><% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#creatingReview" data-bs-whatever="@mdo">Create a Review</button>
+        <div class="modal fade" id="creatingReview" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New Review</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body"><%= simple_form_for [@pokemon, @review], html: { class: 'mt-1' } do |form| %><%= form.input :content %><%= form.input :rating %> </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><%= form.submit 'Send review', class: 'button' %><% end %>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-
-          <div class="card p-4" style="background-color: #f5f5f5; margin-top: 20px;">
-            <h1><%= @pokemon.name %></h1>
-          </div>
-          <div class="card p-4" style="background-color: #f5f5f5; margin-top: 20px;">
-            <h2>A bit more about this Pokemon ...</h2>
-            <p><%= @pokemon.description %></p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<%# Parts added by Natalija %>
-<h2 class="form-h2">Book this pokemon</h2>
-<div class="container form-container">
-  <div class="row">
-    <div class="form-card col-md-8 col-lg-6 col-xl-6">
-      <%= simple_form_for [@pokemon, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <div class="form-actions">
-          <%= f.submit 'Make a booking', class: "button" %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
-<%# Parts added by Natalija %>

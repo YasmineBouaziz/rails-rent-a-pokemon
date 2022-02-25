@@ -7,7 +7,6 @@
   <div class="container-fluid p-0">
     <div class="cards" data-search-target="card_populate">
       <% @pokemons.each do |pokemon| %>
-
       <%# Beginning of the card  %>
       <div class="card bg-light" id="card-highlighter">
         <%= link_to pokemon do %>
@@ -19,7 +18,7 @@
               <h3 class="py-2" data-content=""><%=pokemon.user.name[0..15] + "..."%></h3>
             </div>
             <div class="card-right d-flex align-items-end flex-column justify-content-around">
-              <h2>£<%=number_with_delimiter(pokemon.price.to_i * 7,delimiter: ",") %> </h2>
+              <h2>£<%=number_with_delimiter(pokemon.price.to_i * 3,delimiter: ",") %> </h2>
               <div class="call-to d-flex align-items-center justify-content-around text-center p-2 rounded-pill">
                 <h3>Rent me</h3>
                 <%= image_tag "money.png", id: "money"%>
@@ -29,9 +28,7 @@
           </div>
         </div>
         <%# End of the card  %>
-
       </div>
-
       <% end %>
     </div>
     </ul>
