@@ -32,7 +32,6 @@ class PokemonsController < ApplicationController
       @pokemon = Pokemon.new(pokemon_params)
     end
     @pokemon.user_id = current_user.id
-
     if @pokemon.save
       redirect_to @pokemon, notice: "#{@pokemon.name} was successfully created."
     else
