@@ -82,3 +82,6 @@ gem 'jquery-rails'
 #Cloudinary
 gem 'cloudinary', '~> 1.16.0'
 gem 'bootstrap'
+
+# AJAX
+gem "turbolinks_render"
