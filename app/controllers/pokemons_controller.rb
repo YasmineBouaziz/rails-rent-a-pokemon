@@ -26,7 +26,6 @@ class PokemonsController < ApplicationController
     # To writ if statement to fetch a picture from API, if no ohotos given by the user
     @pokemon = Pokemon.new(pokemon_params)
     @pokemon.user_id = current_user.id
-
     if @pokemon.save
       redirect_to @pokemon, notice: "#{@pokemon.name} was successfully created."
     else
